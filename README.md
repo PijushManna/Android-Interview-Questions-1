@@ -262,12 +262,55 @@ fun handleResult(result: DataResult) {
 
 </details>
 
+## Android 
+
 <details>
-<summary></summary>
+<summary>What are the android lifecycle events ?</summary>
+
+The Activity lifecycle defines how Android creates, displays, pauses, and destroys a screen. Correct usage ensures good performance, no leaks, and a smooth user experience.
+
+- `onCreate()` : Called once when activity is created. best for , 
+    - Dependency Injection 
+    - Initializing  ViewModels
+- `onStart()` : The Activity becomes visible but not yet interactive.
+    - Good place for creating observers
+- `onResume()` : The Activity is in the foreground and **fully interactive.**
+    - Start Sensors, Camera or Location Updates.
+    - Perform data Synchronization 
+    - Resume animations or realtime updates
+- `onPause()` : Called when activity is about to lose focus. 
+    - Used to pause or suspend ongoing work.
+    - Best place to pause Camera, Sensors, Listeners.
+- `onStop()` : When activity is no longer visible. 
+    - Used to release resources like Media Playback.
+
+- `onDestroy()` : Final Cleanup when activity is destroyed.
+
 </details>
 
 <details>
-<summary></summary>
+<summary>How do you Handle Configuration Change ?</summary>
+
+Configuration changes such as screen rotation , multi-window, foldable postures, changing locale cause the activity to be recreated, which means all Activity fields are lost. 
+
+> **Core Principal** - UI State should not live inside activity.
+
+There are 3 ways to save the data , 
+- **ViewModel** :
+
+    Hold the UI state in memory and survives configuration change. It has much longer   lifespan as the old viewModel can be reused inside new Activity.
+
+- **SaveStateHandle** :
+
+    Lightweight, Bundle backed storage. 
+    Its fast but size is limited ~1MB.
+
+- **Proto Datastore** :
+
+    Disk based persistance. <br/>
+    Survives **process death** (Force kill, low memory)<br/>
+    Safest, ensure state is restored when relaunched.
+
 </details>
 
 <details>

@@ -16,7 +16,8 @@ You can use **Markdown** syntax here, including lists and headings.
 
 - **Question**: Android Push Notification Flow using FCM
     - **Answer**: [Android Push Notification Flow using FCM](https://www.youtube.com/watch?v=TrufwW4ILHg)
-- **Question**: What is an inline function in Kotlin?
+- **Question**: What is an `inline` function in Kotlin? When we should use it and when not ?
+
     - **Answer**: [What is an inline function in Kotlin?](https://www.youtube.com/watch?v=GLLI8h67ryo)
 - **Question**: What is the advantage of using const in Kotlin?
     - **Answer**: [What is the advantage of using const in Kotlin?](https://www.youtube.com/watch?v=3G49ivVxfkU)
